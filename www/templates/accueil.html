@@ -3,11 +3,13 @@
     <!--<h1>Index de mon application</h1>-->
   <!--</ion-content>-->
 <!--</ion-view>-->
+
 <ion-view view-title="Accueil">
   <ion-nav-buttons side="secondary">
-    <button class="buttons button-icon ion-android-search"></button>
+    <button class="buttons button-icon ion-android-search" ng-click="showFilterBar()"></button>
   </ion-nav-buttons>
-  <ion-content class="padding">
-    <ion-refresher pulling-text="Update Date"></ion-refresher>
-  </ion-content>
+  <!--<ion-content class="padding">-->
+    <!--<ion-refresher pulling-text="Pull to refresh..." on-refresh="doRefresh()"></ion-refresher>-->
+  <!--</ion-content>-->
+
 </ion-view>

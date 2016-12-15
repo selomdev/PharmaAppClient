@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in accueil.html)
 // the 2nd parameter is an array of 'requires'
-app=angular.module('starter', ['ionic'])
+app=angular.module('starter', ['ionic','jett.ionic.filter.bar'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -26,7 +26,8 @@ app=angular.module('starter', ['ionic'])
 app.config(function ($stateProvider, $urlRouterProvider) {
   $stateProvider.state("accueil",{
     url:"/accueil",
-    templateUrl:"templates/accueil.html"
+    templateUrl:"templates/accueil.html",
+    controller:"accueilCtrl"
   });
 
   $stateProvider.state("recherche",{
@@ -55,5 +56,28 @@ app.config(function ($stateProvider, $urlRouterProvider) {
   });
 
   $urlRouterProvider.otherwise("accueil");
-
 });
+
+
+app.controller('accueilCtrl', function ($scope, $ionicFilterBar) {
+  // $scope.values = window.Values.sort(function (a, b) {
+  //   return a.first_name > b.first_name ? 1 : -1;
+  // });
+
+  $scope.showFilterBar = function () {
+    filterBar = $ionicFilterBar.show({
+      cancelText: "<i class='ion-ios-close-outline'></i>",
+      items: $scope.values,
+      update: function (filteredItems) {
+        $scope.values = filteredItems
+      }
+      //filterProperties : 'first_name'
+    });
+  }
+
+  $scope.doRefresh = function () {
+    $scope.values = window.Values;
+    $scope.$broadcast('scroll.refreshComplete');
+  }
+
+})
