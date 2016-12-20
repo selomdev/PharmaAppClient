@@ -1,15 +1,19 @@
-<!--<ion-view view-title="Accueil">-->
-  <!--<ion-content>-->
-    <!--<h1>Index de mon application</h1>-->
-  <!--</ion-content>-->
-<!--</ion-view>-->
-
 <ion-view view-title="Accueil">
   <ion-nav-buttons side="secondary">
-    <button class="buttons button-icon ion-android-search" ng-click="showFilterBar()"></button>
-  </ion-nav-buttons>
-  <!--<ion-content class="padding">-->
-    <!--<ion-refresher pulling-text="Pull to refresh..." on-refresh="doRefresh()"></ion-refresher>-->
-  <!--</ion-content>-->
+    <!--1ière tentative OK pour le plugin-->
+    <!--<button class="button button-icon icon ion-ios-search-strong" ng-click="showFilterBar()"></button>-->
 
+    <!--2ime tentative Ok pour le formulaire-->
+    <div style="display: inherit;background-color: #33cd5f;">
+      <button class="button button-icon icon ion-ios-search-strong" ng-click="showSearcBar()"></button>
+      <form class="item-input-inset searchform" ng-submit="getInput(pharmadata)" ng-show="shouldShow">
+        <label class="item-input-wrapper">
+          <input style="height: 100% !important;" type="search" placeholder="Rechercher produit" ng-model="pharmadata">
+        </label>
+        <button class="button button-small mybtnsend">Envoyer</button>
+      </form>
+    </div>
+  </ion-nav-buttons>
+
+  <div id="map" data-tap-disabled="true"></div>
 </ion-view>

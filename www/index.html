@@ -26,6 +26,9 @@
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
 
+    <!-- Injection ngcordova -->
+    <script src="lib/ngCordova/dist/ng-cordova.min.js"></script>
+
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
 
@@ -33,15 +36,19 @@
     <script src="js/app.js"></script>
 
     <!-- Pour la recherche dans la nav bar -->
-    <link href="lib/ionic-filter-bar/dist/ionic.filter.bar.min.css" rel="stylesheet">
-    <script src="lib/ionic-filter-bar/dist/ionic.filter.bar.min.js"></script>
+    <!--<link href="lib/ionic-filter-bar/dist/ionic.filter.bar.min.css" rel="stylesheet">-->
+    <!--<script src="lib/ionic-filter-bar/dist/ionic.filter.bar.min.js"></script>-->
+
+    <!-- MAP API -->
+    <script src="http://maps.google.com/maps/api/js?key=AIzaSyCykFzQI9WwHzmRyE9QW2aM-HP0VLx2EnA"></script>
+
   </head>
   <body ng-app="starter">
     <ion-side-menus>
       <ion-side-menu-content>
         <ion-nav-bar class="bar-balanced">
           <ion-nav-buttons>
-            <button menu-toggle="left" class="button button-icon ion-navicon"></button>
+            <button menu-toggle="left" class="button button-icon ion-navicon" style="z-index: 0 !important;"></button>
           </ion-nav-buttons>
         </ion-nav-bar>
 
@@ -50,17 +57,56 @@
       </ion-side-menu-content>
 
       <ion-side-menu side="left">
-        <ion-item menu-close ui-sref="accueil">Accueil</ion-item>
-        <ion-item menu-close ui-sref="recherche">Recherche avancée</ion-item>
-        <ion-item menu-close ui-sref="conseil">Conseil santé</ion-item>
-        <ion-item menu-close ui-sref="compte">Mon compte</ion-item>
-        <ion-item menu-close ui-sref="aide">Aide et commentaires</ion-item>
+        <!--<ion-item menu-close ui-sref="accueil">Accueil</ion-item>-->
+        <!--<ion-item menu-close ui-sref="recherche">Recherche avancée</ion-item>-->
+        <!--<ion-item menu-close ui-sref="conseil">Conseil santé</ion-item>-->
+        <!--<ion-item menu-close ui-sref="compte">Mon compte</ion-item>-->
+        <!--<ion-item menu-close ui-sref="aide">Aide et commentaires</ion-item>-->
+        <div class="list">
+          <div class="row userbg">
+            <div class="col">
+              <img class="userajustement" src="img/user.png">
+            </div>
+            <div class="col col-75">
+              <p class="userfont">Nom : GELI</p>
+              <p class="userfont">Prenoms : Selom</p>
+              <p class="userfont">Pharmacie : KOULOUBA</p>
+            </div>
+          </div>
+
+          <ion-scroll delegate-handle="small" style="height: 10% !important;">
+            <a class="item item-avatar userbanfont" ui-sref="accueil" menu-close>
+              <img src="img/accueil.png">
+              <p class="usertextmiddleallign">Accueil</p>
+            </a>
+
+            <a class="item item-avatar userbanfont" ui-sref="recherche" menu-close>
+              <img src="img/rA.png">
+              <p class="usertextmiddleallign">Recherche avancée</p>
+            </a>
+
+            <a class="item item-avatar userbanfont" ui-sref="conseil" menu-close>
+              <img src="img/Conseil.png">
+              <p class="usertextmiddleallign">Conseil santé</p>
+            </a>
+
+            <a class="item item-avatar userbanfont" ui-sref="compte" menu-close>
+              <img src="img/profilPB.png">
+              <p class="usertextmiddleallign">Mon compte</p>
+            </a>
+
+            <a class="item item-avatar userbanfont" ui-sref="aide" menu-close>
+              <img src="img/aide.png">
+              <p class="usertextmiddleallign">Aide et commentaires</p>
+            </a>
+          </ion-scroll>
+        </div>
       </ion-side-menu>
 
     </ion-side-menus>
-    <div class="tabs">
+    <div class="tabs espacepub">
       <a class="tab-item" ui-sref="#">
-        Espace publicitaire
+        <marquee>Espace publicitaire</marquee>
       </a>
     </div>
   </body>

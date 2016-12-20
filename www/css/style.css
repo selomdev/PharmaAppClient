@@ -1,1 +1,68 @@
 /* Empty. Add your own CSS if you like */
+.userbg{
+  background-color: #4cd964;
+}
+.userajustement{
+  width: 60px;
+  height: 60px;
+}
+.userfont{
+  color: white;
+  font-weight: bold;
+}
+.usertextmiddleallign{
+  vertical-align: sub;
+  font-weight: bold;
+  color: black !important;
+  margin-top: 5px;
+}
+
+.userbanfont{
+  background-color: #f9f9f9;
+}
+
+.espacepub{
+  height: 16%;
+  border: 2px solid black !important;
+  border-top: 2px solid black !important;
+}
+
+.mybtnsend{
+  /*height: 100% !important;*/
+  /*position: relative;*/
+  min-height: 24px !important;
+  line-height: 10px !important;
+}
+
+.scroll{
+  height: 100%;
+}
+
+#map{
+  background-color: #e6e6e6;
+  margin: 40px 0px 100px;
+  height: 80%;
+  width: 100%;
+}
+
+.searchform{
+  z-index: 1000;
+}
+
+
+/*ion-scroll[direction=x] {*/
+  /*width: 100vw;*/
+/*}*/
+
+/*ion-scroll[delegate-handle=calendarScroll] {*/
+  /*height: 100%;*/
+/*}*/
+/*ion-scroll[direction=y] {*/
+  /*height: 100%;*/
+  /*overflow-y: hidden !important;*/
+  /*height: calc(100vh - 33px - 33px - 90px - 15px);*/
+/*}*/
+
+[ng-cloak]{
+  display: none;
+}
